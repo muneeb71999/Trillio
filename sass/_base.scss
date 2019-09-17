@@ -1,0 +1,63 @@
+//FONTS FROM GOOGLE
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+
+//CUSTOM CSS VARIABELS
+$color-primary: #eb2f64;
+$color-primary-light: #FF3366;
+$color-primary-dark: #BA265D;
+
+$color-grey-light-1: #ECECEC;
+$color-grey-light-2: #b9b9b9;
+$color-grey-light-3: #c7c7c7;
+$color-grey-light-4: rgb(179, 179, 179);
+
+$color-grey-dark-1: #333;
+$color-grey-dark-2: #777;
+$color-grey-dark-3: #999;
+
+$shadow-dark: 0 2rem 4rem rgba(0, 0, 0, .3);
+
+$screen-one : 1040px;
+$screen-two : 900px;
+$screen-three : 840px;
+$screen-four:670px;
+
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+
+    @media (max-width:$screen-one) {
+        font-size: 9px;
+    }
+
+    @media (max-width:$screen-three) {
+        font-size: 8px;
+    }
+
+    @media(max-width: $screen-three) {
+        font-size: 7px;
+    }
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

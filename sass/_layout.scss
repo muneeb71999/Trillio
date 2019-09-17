@@ -1,0 +1,35 @@
+.container {
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: $shadow-dark;
+    // overflow: hidden;
+
+    @media (max-width:$screen-one) {
+        margin: 0 auto;
+    }
+
+}
+
+.main {
+    display: flex;
+
+    @media (max-width:$screen-two) {
+        flex-direction: column;
+    }
+}
+
+.sidebar {
+    flex: 0 0 18%;
+    background-color: #4e4e4e;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    position: relative;
+
+}
+
+.content {
+    width: 100%;
+}
