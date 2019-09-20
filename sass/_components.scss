@@ -12,6 +12,10 @@
         height: 9rem;
     }
 
+    @media (max-width:$screen-five) {
+        height: 11rem;
+    }
+
 }
 
 ////////////////////////////////////////////////
@@ -31,10 +35,11 @@
     position: relative;
     height: 4rem;
 
-    @media (max-width:$screen-three) {
-        // flex: 0 0 80%;
-        // order: 1;
-        // margin: 1.2rem auto 1.2rem auto;
+
+    @media(max-width: $screen-five) {
+        flex: 0 0 100%;
+        order: 1;
+        margin: 1rem auto;
     }
 
     &__input {
@@ -47,6 +52,7 @@
         padding: .8rem 1.2rem;
         border-radius: 10rem 0 0 10rem;
         transition: all .5s;
+
 
 
     }
@@ -142,12 +148,7 @@
 ////////////////////////////////////////////////
 // SIDE NAVIGATION BAR
 .side-nav {
-    // flex: 0 0 90%;
     height: 100%;
-
-    // @media (max-width:$screen-two) {
-    //     display: flex;
-    // }
 
     &__list {
         list-style: none;
@@ -164,6 +165,10 @@
                 margin-top: 0;
             }
         }
+
+        @media (max-width:$screen-eight) {
+            flex-wrap: wrap;
+        }
     }
 
     &__item {
@@ -173,21 +178,17 @@
             flex: 1;
             margin-bottom: 0;
         }
-    }
 
-    &__icon-box {
-        margin: 0 2rem;
-    }
 
-    &__icon {
-        width: 2.5rem;
-        height: 2.5rem;
-        fill: $color-grey-light-1;
     }
 
     &__link {
         position: relative;
         z-index: 2;
+
+        @media(max-width: $screen-four) {
+            flex-direction: column;
+        }
 
 
         &::before {
@@ -226,10 +227,30 @@
             background-color: $color-primary;
         }
 
-        @media(max-width: $screen-four) {
-            flex-direction: column;
+
+
+    }
+
+    &__icon-box {
+        margin: 0 2rem;
+
+        @media (max-width: $screen-five) {
+            margin: 1rem auto;
         }
     }
+
+    &__icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: $color-grey-light-1;
+
+        @media (max-width: $screen-five) {
+            width: 2.3rem;
+            height: 2.3rem;
+        }
+    }
+
+
 }
 
 ////////////////////////////////////////////////
@@ -259,8 +280,22 @@
     overflow: hidden;
 
     &__img-box {
-        width: 33.33%;
+        width: 100%;
         overflow: hidden;
+
+        @media (max-width:$screen-six) {
+            &:first-of-type {
+                width: 50%;
+            }
+
+            &:nth-of-type(2) {
+                width: 50%;
+            }
+
+            &:nth-of-type(3) {
+                width: 100%;
+            }
+        }
     }
 
     &__img {
@@ -271,6 +306,12 @@
     @media (max-width:$screen-two) {
         height: 18rem;
     }
+
+    @media (max-width:$screen-six) {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
 }
 
 ////////////////////////////////////////////////
@@ -282,6 +323,10 @@
     width: 100%;
     background: #fff;
 
+    @media(max-width: $screen-eight) {
+        flex-wrap: wrap;
+    }
+
     &__name-box {
         display: flex;
         justify-content: center;
@@ -292,6 +337,15 @@
         @media(max-width: $screen-three) {
             padding: 4rem;
         }
+
+        @media(max-width: $screen-five) {
+            padding: 2rem;
+        }
+
+        @media(max-width: $screen-six) {
+            justify-content: flex-start;
+        }
+
     }
 
     &__name {
@@ -304,11 +358,25 @@
         @media(max-width: $screen-three) {
             font-size: 2.4rem;
         }
+
+        @media(max-width: $screen-five) {
+            font-size: 2.5rem;
+        }
+
     }
 
     &__rating {
         display: flex;
         align-items: center;
+
+        @media(max-width: $screen-six) {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        @media(max-width: $screen-seven) {
+            display: none;
+        }
     }
 
     &__location {
@@ -342,6 +410,11 @@
 
         @media(max-width: $screen-three) {
             font-size: 3rem;
+        }
+
+        @media(max-width: $screen-eight) {
+            flex: 1;
+            padding: 2rem;
         }
 
         & span {
@@ -380,6 +453,10 @@ svg[class$="-icon"] {
         flex-direction: column;
     }
 
+    @media (max-width:$screen-six) {
+        padding: 1rem;
+    }
+
 
     &__detail {
         flex: 0 0 70%;
@@ -395,6 +472,10 @@ svg[class$="-icon"] {
             padding: 2rem;
             margin-right: 2rem;
             font-size: 2rem;
+        }
+
+        @media (max-width:$screen-six) {
+            padding: 1rem;
         }
     }
 
@@ -439,6 +520,16 @@ svg[class$="-icon"] {
             background-color: $color-primary;
             mask: url('./../img/chevron-thin-right.svg');
             mask-size: cover;
+        }
+
+        @media (max-width:$screen-six) {
+            flex-direction: column;
+            align-items: flex-start;
+
+            & li {
+                flex: 0 0 100%;
+                margin-bottom: 1rem;
+            }
         }
     }
 }
@@ -497,6 +588,10 @@ svg[class$="-icon"] {
     padding: 4rem 0;
     // box-shadow: 0 1px 3px #dadada;
 
+    @media(max-width: $screen-three) {
+        font-size: 1.8rem;
+    }
+
     &__box {
         box-shadow: 0 1px 3px #dadada;
         padding: 2rem 1rem;
@@ -509,7 +604,10 @@ svg[class$="-icon"] {
 
         @media(max-width: $screen-four) {
             width: 80%;
-            padding: 3rem;
+        }
+
+        @media(max-width: $screen-four) {
+            width: 90%;
         }
     }
 
@@ -607,6 +705,10 @@ svg[class$="-icon"] {
             font-size: 2.5rem;
             margin-bottom: 3rem;
         }
+
+        @media(max-width: $screen-five) {
+            width: 80%;
+        }
     }
 
 }
@@ -626,6 +728,10 @@ svg[class$="-icon"] {
         width: 40%;
     }
 
+    @media(max-width: $screen-five) {
+        width: 60%;
+    }
+
     &>* {
         display: inline-block;
         transition: all .2s;
@@ -633,7 +739,7 @@ svg[class$="-icon"] {
     }
 
 
-    &__visible {}
+    // &__visible {}
 
     &__invisible {
         position: absolute;

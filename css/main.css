@@ -50,7 +50,6 @@ body {
   max-width: 120rem;
   margin: 8rem auto;
   background-color: #fff;
-  border-radius: .5rem;
   -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
           box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
 }
@@ -118,6 +117,12 @@ body {
   }
 }
 
+@media (max-width: 570px) {
+  .header {
+    height: 11rem;
+  }
+}
+
 .logo {
   width: 4.5rem;
   margin-left: 2rem;
@@ -138,6 +143,18 @@ body {
           justify-content: center;
   position: relative;
   height: 4rem;
+}
+
+@media (max-width: 570px) {
+  .search {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin: 1rem auto;
+  }
 }
 
 .search__input {
@@ -273,6 +290,13 @@ body {
   }
 }
 
+@media (max-width: 300px) {
+  .side-nav__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .side-nav__item {
   margin-bottom: 0.5rem;
 }
@@ -286,16 +310,6 @@ body {
   }
 }
 
-.side-nav__icon-box {
-  margin: 0 2rem;
-}
-
-.side-nav__icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  fill: #ECECEC;
-}
-
 .side-nav__link {
   position: relative;
   z-index: 2;
@@ -306,6 +320,15 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 1.4rem 0;
+}
+
+@media (max-width: 670px) {
+  .side-nav__link {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .side-nav__link::before {
@@ -340,12 +363,26 @@ body {
   background-color: #eb2f64;
 }
 
-@media (max-width: 670px) {
-  .side-nav__link {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+.side-nav__icon-box {
+  margin: 0 2rem;
+}
+
+@media (max-width: 570px) {
+  .side-nav__icon-box {
+    margin: 1rem auto;
+  }
+}
+
+.side-nav__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: #ECECEC;
+}
+
+@media (max-width: 570px) {
+  .side-nav__icon {
+    width: 2.3rem;
+    height: 2.3rem;
   }
 }
 
@@ -378,8 +415,20 @@ body {
 }
 
 .gallery__img-box {
-  width: 33.33%;
+  width: 100%;
   overflow: hidden;
+}
+
+@media (max-width: 410px) {
+  .gallery__img-box:first-of-type {
+    width: 50%;
+  }
+  .gallery__img-box:nth-of-type(2) {
+    width: 50%;
+  }
+  .gallery__img-box:nth-of-type(3) {
+    width: 100%;
+  }
 }
 
 .gallery__img {
@@ -390,6 +439,14 @@ body {
 @media (max-width: 900px) {
   .gallery {
     height: 18rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .gallery {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
   }
 }
 
@@ -405,6 +462,13 @@ body {
           align-items: center;
   width: 100%;
   background: #fff;
+}
+
+@media (max-width: 300px) {
+  .hotel-overview {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .hotel-overview__name-box {
@@ -427,6 +491,20 @@ body {
   }
 }
 
+@media (max-width: 570px) {
+  .hotel-overview__name-box {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .hotel-overview__name-box {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 .hotel-overview__name {
   margin-right: 1.5rem;
   font-size: 2.2rem;
@@ -441,6 +519,12 @@ body {
   }
 }
 
+@media (max-width: 570px) {
+  .hotel-overview__name {
+    font-size: 2.5rem;
+  }
+}
+
 .hotel-overview__rating {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -448,6 +532,23 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 410px) {
+  .hotel-overview__rating {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media (max-width: 370px) {
+  .hotel-overview__rating {
+    display: none;
+  }
 }
 
 .hotel-overview__location {
@@ -502,6 +603,15 @@ body {
   }
 }
 
+@media (max-width: 300px) {
+  .hotel-overview__rating-box {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 2rem;
+  }
+}
+
 .hotel-overview__rating-box span {
   font-size: 1.2rem;
 }
@@ -545,6 +655,12 @@ svg[class$="-icon"] {
   }
 }
 
+@media (max-width: 410px) {
+  .hotel-des {
+    padding: 1rem;
+  }
+}
+
 .hotel-des__detail {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 70%;
@@ -563,6 +679,12 @@ svg[class$="-icon"] {
     padding: 2rem;
     margin-right: 2rem;
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .hotel-des__detail {
+    padding: 1rem;
   }
 }
 
@@ -613,6 +735,24 @@ svg[class$="-icon"] {
           mask: url("./../img/chevron-thin-right.svg");
   -webkit-mask-size: cover;
           mask-size: cover;
+}
+
+@media (max-width: 410px) {
+  .hotel-des__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .hotel-des__list li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 .recommend {
@@ -679,6 +819,12 @@ svg[class$="-icon"] {
   padding: 4rem 0;
 }
 
+@media (max-width: 840px) {
+  .review {
+    font-size: 1.8rem;
+  }
+}
+
 .review__box {
   -webkit-box-shadow: 0 1px 3px #dadada;
           box-shadow: 0 1px 3px #dadada;
@@ -696,7 +842,12 @@ svg[class$="-icon"] {
 @media (max-width: 670px) {
   .review__box {
     width: 80%;
-    padding: 3rem;
+  }
+}
+
+@media (max-width: 670px) {
+  .review__box {
+    width: 90%;
   }
 }
 
@@ -822,6 +973,12 @@ svg[class$="-icon"] {
   }
 }
 
+@media (max-width: 570px) {
+  .cta__heading {
+    width: 80%;
+  }
+}
+
 .btn {
   border: none;
   background-image: -webkit-gradient(linear, left top, right top, from(#FF3366), to(#BA265D));
@@ -838,6 +995,12 @@ svg[class$="-icon"] {
 @media (max-width: 840px) {
   .btn {
     width: 40%;
+  }
+}
+
+@media (max-width: 570px) {
+  .btn {
+    width: 60%;
   }
 }
 
