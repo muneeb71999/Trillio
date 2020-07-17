@@ -3,7 +3,8 @@
   margin: 8rem auto;
   background-color: #fff;
   box-shadow: $shadow-dark;
-  border-radius: 16px;
+  border-radius: 8px;
+  overflow: hidden;
 
   @media (max-width: $screen-one) {
     margin: 0 auto;

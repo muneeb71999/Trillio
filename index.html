@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="/css/lightbox.css">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <title>Trillio | all in one booking app</title>
 </head>
@@ -17,7 +16,7 @@
         <header class="header">
             <img src="./img/logo.png" alt="Logo Trillio" class="logo">
             <form class="search">
-                <input type="text" class="search__input" autocomplete="off" placeholder="Search hotel">
+                <input type="text" class="search__input" autocomplete="off" placeholder="Press '/' to search here ....">
                 <button class="search__icon-box">
                     <svg class="search__icon">
                         <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
@@ -100,19 +99,19 @@
                 <div class="gallery">
 
                     <div class="gallery__img-box">
-                        <a href="./img/hotel-1.jpg" data-lightbox="roadtrip">
+                        <div data-link="/img/hotel-1.jpg" class="light-box">
                             <img src="./img/hotel-1.jpg" alt="hotel" class="gallery__img">
-                        </a>
+                        </div>
                     </div>
                     <div class="gallery__img-box">
-                        <a href="./img/hotel-2.jpg" data-lightbox="roadtrip">
+                        <div data-link="/img/hotel-2.jpg" class="light-box">
                             <img src="./img/hotel-2.jpg" alt="hotel" class="gallery__img">
-                        </a>
+                        </div>
                     </div>
                     <div class="gallery__img-box">
-                        <a href="./img/hotel-3.jpg" data-lightbox="roadtrip">
+                        <div data-link="/img/hotel-3.jpg" class="light-box">
                             <img src="./img/hotel-3.jpg" alt="hotel" class="gallery__img">
-                        </a>
+                        </div>
                     </div>
 
                 </div>
@@ -222,14 +221,62 @@
 
     </div>
 
+    <div class="light-box__modal light-box__modal--hidden" id="light-box-modal">
+        <div class="light-box__bg"></div>
+        <button class="light-box__btn">
+            &times;
+        </button>
+        <div class="light-box__content">
+            <img src="" alt="" class="light-box__img">
+        </div>
+    </div>
+
 </body>
 
-<script src="/js/lightbox-plus-jquery.min.js"></script>
 <script>
-    lightbox.option({
-        'resizeDuration': 200,
-        'wrapAround': true,
+    const lightBoxElements = document.querySelectorAll('.light-box');
+    const lightBoxModal = document.getElementById('light-box-modal');
+    const lightBoxBtn = document.querySelector('.light-box__btn');
+    const lightBoxBg = document.querySelector('.light-box__bg');
+    const lightBoxImg = document.querySelector('.light-box__img');
+    const search = document.querySelector('.search__input')
+    let imageCount = 0;
+
+    lightBoxElements.forEach((el, index) => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            lightBoxModal.classList.remove('light-box__modal--hidden')
+            lightBoxImg.setAttribute('src', e.target.getAttribute('src'));
+            imageCount = index;
+        });
     })
+
+    lightBoxImg.addEventListener('click', () => {
+        imageCount === lightBoxElements.length ? imageCount = 0 : imageCount++;
+        lightBoxImg.setAttribute('src', (lightBoxElements[imageCount] || lightBoxElements[0]).getAttribute('data-link'));
+    });
+
+    // Hide Modal Function
+    function hideModal() {
+        lightBoxModal.classList.add('light-box__modal--hidden');
+    }
+
+    // Close Btn handler
+    lightBoxBtn.addEventListener('click', hideModal);
+
+    // Outside click Event Handler
+    lightBoxBg.addEventListener('click', hideModal)
+
+    // Esc Btn press Handler
+    document.addEventListener('keyup', (e) => {
+        if (e.keyCode === 27 || e.which === 27) {
+            hideModal();
+        }
+
+        if (e.keyCode === 191 || e.which === 191) {
+            search.focus();
+        }
+    });
 </script>
 
 </html>
