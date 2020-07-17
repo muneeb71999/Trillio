@@ -1,33 +1,33 @@
 .container {
-    max-width: 120rem;
-    margin: 8rem auto;
-    background-color: #fff;
-    box-shadow: $shadow-dark;
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: #fff;
+  box-shadow: $shadow-dark;
+  border-radius: 16px;
 
-    @media (max-width:$screen-one) {
-        margin: 0 auto;
-    }
-
+  @media (max-width: $screen-one) {
+    margin: 0 auto;
+    border-radius: 0;
+  }
 }
 
 .main {
-    display: flex;
+  display: flex;
 
-    @media (max-width:$screen-two) {
-        flex-direction: column;
-    }
+  @media (max-width: $screen-two) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
-    flex: 0 0 18%;
-    background-color: #4e4e4e;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.6rem;
-    position: relative;
-
+  flex: 0 0 18%;
+  background-color: #4e4e4e;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  position: relative;
 }
 
 .content {
-    width: 100%;
+  width: 100%;
 }

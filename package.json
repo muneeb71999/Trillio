@@ -1,0 +1,24 @@
+{
+  "name": "Trillio",
+  "version": "1.0.0",
+  "description": "You can visit this website on https://muneeb71999.github.io/Trillio/",
+  "main": "index.js",
+  "dependencies": {
+    "lightbox2": "^2.11.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muneeb71999/Trillio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muneeb71999/Trillio/issues"
+  },
+  "homepage": "https://github.com/muneeb71999/Trillio#readme"
+}
